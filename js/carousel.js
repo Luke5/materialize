@@ -360,7 +360,10 @@
         ? this.$el.find('.carousel-item.active').first()
         : this.$el.find('.carousel-item').first();
       let firstImage = firstSlide.find('img').first();
-      if (firstImage.length) {
+      if (this.$el.hasClass("tabs-content")){
+        this.$el.css('height', 'auto');
+      }
+      else if (firstImage.length) {
         if (firstImage[0].complete) {
           // If image won't trigger the load event
           let imageHeight = firstImage.height();
